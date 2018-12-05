@@ -1,19 +1,53 @@
 <html>
     <head></head>
     <body>
-        <h2>Test App</h2>
-        <script src="app.js"></script>
-        <div>
-            <div style="margin:20px;">
-                <div>https://tcisf-mapper.flogo.cloud.tibco.com/api</div>
-                <div>https://my-json-server.typicode.com/spkalyan1520/test-rest-server/api</div>
-                <div>http://ec2-54-174-229-135.compute-1.amazonaws.com/api</div>
+        <div style="margin-left:20px; margin-top:10px;">
+            <h2>Test App</h2>
+            <script src="app.js"></script>
+            <div>
+                <h3>Sample Data</h3>
+                <div style="margin:20px;">
+                    <h3>Sample Urls</h3>
+                    <div>https://tcisf-mapper.flogo.cloud.tibco.com/api</div>
+                    <div>https://my-json-server.typicode.com/spkalyan1520/test-rest-server/api</div>
+                    <div>http://ec2-54-174-229-135.compute-1.amazonaws.com/api</div>
+                    <div>https://tcisf-production-mapper.flogo.cloud.tibco.com/api</div>
+                </div>
+                <div style="margin:20px;">
+                    <h4>Sample body</h4>
+                    <textarea style="width:800px;height:300px;padding-top:20px;">
+                    { 
+                        "Source": [
+                                    {
+                                        "type_length": 240,
+                                        "type": "STRING",
+                                        "name": "LastName",
+                                        "label": "Last Name"
+                                    }
+                                ],
+                        "Target": [
+                                    {
+                                        "type": "string",
+                                        "label": "Company Name",
+                                        "type_length": 255,
+                                        "name": "company"
+                                    }
+                                  ]
+                    }
+                    </textarea>
+                </div>
+                <h3 style="margin-left:20px;margin-bottom:-10px;">Url</h3>
+                <input id="url" placeholder="Enter url to test" style="width:800px;margin:20px;">
             </div>
-            <input id="url" placeholder="Enter url to test" style="width:800px;margin:20px;">
-            <button onclick="callMatcher()">Submit</button>
-        </div>
-        <div id="response">
-
+            <div id="request">
+                <div id="request" style="margin:20px;margin-bottom:-10px;">
+                    <h3>Request Body:</h3>
+                </div>
+                <textarea style="width:800px;height:200px;margin:20px;" id="request_body" placeholder="Insert JSON request body"></textarea>
+            </div>
+            <button onclick="callMatcher()" style="margin:20px">Submit</button>
+            <div id="response">
+            </div>
         </div>
     </body>
 </html>
